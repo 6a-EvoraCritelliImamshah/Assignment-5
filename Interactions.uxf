@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>250</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>/views
+--
+HTML pages to support 
+each CRUD request 
+and the map display.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>340</y>
+      <w>190</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>client.controller
+--
+Angular logic for client-side 
+display.  
+Also manages error handling, 
+and indicating to the user 
+when requests are loading 
+and when they have been 
+completed.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>550</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>client.factory
+--
+Uses $http to make 
+CRUD requests via 
+the listings API.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>250</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>server.routes
+--
+Defines server-side 
+responses to various 
+HTTP requests at 
+different URLs.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>100</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>express
+--
+Encapsulates operations 
+in middleware and 
+HTTP requests.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>60</y>
+      <w>230</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>/Client/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>60</y>
+      <w>230</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>/Server/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>250</x>
+      <y>470</y>
+      <w>150</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+Uses the factory 
+for CRUD requests 
+to the server.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>100</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>client.routes
+--
+Associates URLs with 
+respective views so that 
+states may be loaded.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>250</x>
+      <y>170</y>
+      <w>140</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+routes references 
+the .html files 
+located in /views</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>180</y>
+      <w>190</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+Uses routes to 
+determine what 
+happens for each request.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>140</y>
+      <w>300</w>
+      <h>470</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+HTTP requests made by 
+client.factory will be routed 
+according to the router in the 
+express app.</panel_attributes>
+    <additional_attributes>160.0;10.0;100.0;10.0;100.0;450.0;10.0;450.0</additional_attributes>
+  </element>
+</diagram>
