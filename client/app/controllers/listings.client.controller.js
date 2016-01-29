@@ -87,6 +87,13 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
         return false;
       }
 
+      /* Create the listing object */
+      var listing = {
+        name: $scope.name, 
+        code: $scope.code, 
+        address: $scope.address
+      };
+
       Listings.update(id, listing)
               .then(function(response) {
                 // after update successfully finishes, redirect back to the list page
@@ -103,6 +110,8 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
         display the error. 
       */
       $scope.error = null;
+
+      var id = $stateParams.listingId;
 
       Listings.delete(id)
               .then(function(response) {
