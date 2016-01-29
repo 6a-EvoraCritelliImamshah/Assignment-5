@@ -94,13 +94,15 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
         address: $scope.address
       };
 
+      var id = $stateParams.listingId;
+
       Listings.update(id, listing)
               .then(function(response) {
                 // after update successfully finishes, redirect back to the list page
                 $state.go('listings.list', { successMessage: 'Listing successfully updated!' });
               }, function(error) {
                 // otherwise display the error
-                $scope.error = 'Unable to delete listing!\n' + error;
+                $scope.error = 'Unable to update listing!\n' + error;
               });
     };
 
