@@ -17,7 +17,6 @@
       <form name="listingForm" class="form-horizontal" ng-submit="update(listingForm.$valid)" ng-init="findOne()">
         <fieldset>
           <div class="form-group" show-errors>
-            <label>Current Name: {{ listing.name }}</label><br>
             <label for="name">Name</label>
             <input name="name" type="text" ng-model="name" id="name" class="form-control" placeholder="{{ listing.name }}" required>
             <div ng-messages="listingFrom.name.$error" role="alert">
