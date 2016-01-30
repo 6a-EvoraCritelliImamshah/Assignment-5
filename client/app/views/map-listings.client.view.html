@@ -12,7 +12,10 @@
     <div class="col-md-offset-1 col-md-10 formWrapper">
         <div class="page-header">
             <ui-gmap-google-map center="map.center" zoom="map.zoom">
-                <ui-gmap-markers models="Listings" coords="'self'">
+                <ui-gmap-markers models="listings" coords="'coordinates'" icon="'icon'" click="onClick">
+                    <ui-gmap-windows show="show">
+                        <p ng-non-bindable>Name: {{name}}<br>Code: {{code}}<br>Address: {{address}}</p>
+                    </ui-gmap-markers>
                 </ui-gmap-markers>
     <!-- other ui-gmap-directives here -->
 
